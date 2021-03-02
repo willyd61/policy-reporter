@@ -158,12 +158,11 @@ data:
 
 ## Monitoring
 
-The Helm Chart includes optional Manifests for the [MonitoringStack](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack). The provided Dashboard works without Loki
+The Helm Chart includes optional Sub Chart for the [MonitoringStack](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack). The provided Dashboards working without Loki and are only based on the Prometheus Metrics.
 
-* Enable a ServiceMonitor by setting `metrics.serviceMonitor.enabled` to `true`.
-    * With `metrics.serviceMonitor.labels` you can add additional labels to the `ServiceMonitor`. This helps to match the `serviceMonitorSelector` configuration of your Prometheus resource
-* Enable a basic Dashboard as ConfigMap by setting `metrics.dashboard.enabled` to `true`.
-    * Change the namespace to your required monitoring namespace by changing `metrics.dashboard.namespace` (default: cattle-dashboards)
+* Enable the Monitoring by setting `monitoring.enabled` to `true`.
+    * Change the `namespace` to your required monitoring namespace by changing `monitoring.namespace` (default: `cattle-dashboards`)
+    * With `monitoring.serviceMonitor.labels` you can add additional labels to the `ServiceMonitor`. This helps to match the `serviceMonitorSelector` configuration of your Prometheus resource
 
 
 If you are not using the MonitoringStack you can import the dashboard from [Grafana](https://grafana.com/grafana/dashboards/13968)

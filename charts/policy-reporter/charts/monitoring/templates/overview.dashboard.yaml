@@ -1,9 +1,8 @@
-{{- if .Values.metrics.dashboard.enabled }}
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: {{ include "policyreporter.fullname" . }}-dashboard
-  namespace: {{ .Values.metrics.dashboard.namespace }}
+  name: {{ include "monitoring.fullname" . }}-overview-dashboard
+  namespace: {{ .Values.namespace }}
   labels:
     grafana_dashboard: "1"
 data:
@@ -441,7 +440,9 @@ data:
     ],
     "schemaVersion": 26,
     "style": "dark",
-    "tags": [],
+    "tags": [
+        "Policy Reporter"
+    ],
     "templating": {
         "list": []
     },
@@ -465,7 +466,5 @@ data:
     },
     "timezone": "",
     "title": "PolicyReports",
-    "uid": "5ivy3MyGz",
-    "version": 2
+    "version": 1
     }
-{{- end }}
