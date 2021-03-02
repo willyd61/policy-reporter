@@ -176,6 +176,9 @@ helm install policy-reporter policy-reporter/policy-reporter --set metrics.servi
 
 ![PolicyReporter Grafana Dashboard](https://github.com/fjogeleit/policy-reporter/blob/main/docs/images/policy-reports-dashboard.png?raw=true)
 
+![PolicyReporter Details Grafana Dashboard](https://github.com/fjogeleit/policy-reporter/blob/main/docs/images/policy-details.png?raw=true)
+
+![ClusterPolicyReporter Details Grafana Dashboard](https://github.com/fjogeleit/policy-reporter/blob/main/docs/images/cluster-policy-details.png?raw=true)
 
 # Todos
 * ~~Support for ClusterPolicyReports~~
